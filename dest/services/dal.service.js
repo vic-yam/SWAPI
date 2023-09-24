@@ -7,19 +7,20 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+import { getCachedCollection, getCachedSingle, getCachedSingleByUrl } from "./cache.service.js";
 export function getCollection(resource) {
     return __awaiter(this, void 0, void 0, function* () {
-        return (yield fetch(`https://swapi.dev/api/${resource}`)).json();
+        return getCachedCollection(resource);
     });
 }
 ;
 export function getSingle(resource, id) {
     return __awaiter(this, void 0, void 0, function* () {
-        return (yield fetch(`https://swapi.dev/api/${resource}/${id}`)).json();
+        return getCachedSingle(resource, id);
     });
 }
 export function getSingleByUrl(url) {
     return __awaiter(this, void 0, void 0, function* () {
-        return (yield fetch(url)).json();
+        return getCachedSingleByUrl(url);
     });
 }
