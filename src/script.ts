@@ -1,4 +1,4 @@
-import { getCollection, getSingle, getSingleByUrl } from "./services/dal.service.js";
+import { getCollection, getSingleByUrl } from "./services/dal.service.js";
 import { IPerson } from "./models/person.interface.js";
 import { createElementList, createPlanetElement } from "./services/element.service.js";
 import { getIdFromModel } from "./services/helper.service.js";

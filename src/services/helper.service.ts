@@ -10,8 +10,8 @@ export function getIdFromModel( model: IPerson | IVehicle| IStarship| IFilm) {
 }
 
 // get name of the model
-export function getModelName(model: IPerson | IStarship | IVehicle| IFilm) {
-    if('title' in model) 
+export function getModelName(model: IPerson | IStarship | IVehicle| IFilm ) {
+    if('title' in model)
         return model.title;
     return model.name;
 }
