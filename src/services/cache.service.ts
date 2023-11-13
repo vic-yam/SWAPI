@@ -9,15 +9,6 @@ export async function getCachedCollection<T>(resource: string): Promise<{ result
     return Promise.resolve(data);
 };
 
-export async function getCachedSingle<T>(resource: string, id: number): Promise<T> {
-    const cache = localStorage.getItem(`${resource}/${id}`);
-    if (cache) {
-        return JSON.parse(cache);
-    }
-    const data: T = await (await fetch(`https://swapi.dev/api/${resource}/${id}`)).json();
-    localStorage.setItem(`${resource}/${id}`, JSON.stringify(data));
-    return Promise.resolve(data);
-}
 export async function getCachedSingleByUrl<T>(url: string): Promise<T> {
     const cache = localStorage.getItem(url);
     if (cache) {
